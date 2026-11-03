@@ -1,0 +1,8 @@
+# 원본 영상(15GB)·작업 파일은 로컬에만
+후기영상/
+.claude/
+.impeccable/
+*.md
+*.py
+*-old*
+*-prev*
