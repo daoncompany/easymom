@@ -16,9 +16,9 @@
 <meta name="google-site-verification" content="-_9_ts3tQGdT-xtLWzRpWv1B_IvewcqBvyb6CNl1BUk">
 <meta name="naver-site-verification" content="9b5cd65bd20349fb2a81e6d14f7def7db0afe733">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" integrity="sha384-/uC/GIvKJ/9RN6i1izHoBY9ubYo60OAsQRNQ3NRFiNsN+N/MVQJHD5OYcZz6wvwn" crossorigin="anonymous">
-<link rel="stylesheet" href="css/style.css?v=20261103b">
+<link rel="stylesheet" href="css/style.css?v=20261104">
 <script>document.documentElement.classList.add('js')</script>
-<script src="js/main.js?v=20261103b" defer></script>
+<script src="js/main.js?v=20261104" defer></script>
 </head>
 <body>
 
@@ -36,14 +36,8 @@
 
 <main id="top">
 
-  <!-- 1. 히어로 -->
+  <!-- 1. 메인히어로 → 스크롤하면 홍보영상이 덮으며 올라옴 -->
   <div class="hero-wrap">
-  <section class="hero" aria-label="이지맘 홍보영상">
-    <video class="hero-bg" src="video/hero-loop.mp4" poster="img/hero-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
-    <a class="scroll-cue" href="#sub" aria-label="아래로 스크롤"><span></span>SCROLL</a>
-  </section>
-
-  <!-- 1-2. 서브히어로: 영상 위로 덮이며 올라옴 -->
   <section class="subhero" id="sub">
     <div class="hero-in">
       <p class="eyebrow up">CERATEX · NATURAL CERAMIC TEXTILE</p>
@@ -53,9 +47,19 @@
       </h1>
       <p class="hero-sub up">천연 세라믹을 섬유에 결합한 원단, 세라텍스. <br>매일 두르는 한 장으로 따뜻한 습관을 시작하세요.</p>
       <div class="hero-btns up">
-        <button class="btn btn-fill" type="button" data-open="promo">▶ 홍보영상 보기</button>
-        <a class="btn btn-line" href="#review">후기 영상 18편</a>
+        <a class="btn btn-fill" href="#review">후기 영상 18편</a>
+        <a class="btn btn-line" href="#product">제품 보러가기</a>
       </div>
+    </div>
+    <a class="scroll-cue" href="#film" aria-label="홍보영상으로 스크롤"><span></span>SCROLL</a>
+  </section>
+
+  <!-- 2. 홍보영상 -->
+  <section class="hero" id="film" aria-label="이지맘 홍보영상">
+    <video class="hero-bg" src="video/hero-loop.mp4" poster="img/hero-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    <div class="film-cap">
+      <p class="eyebrow">EASYMOM FILM</p>
+      <button class="btn btn-fill" type="button" data-open="promo">▶ 소리와 함께 전체 보기</button>
     </div>
   </section>
   </div>
@@ -210,7 +214,7 @@
       <h2 class="tit rv">직접 들려주신<br><em>18편의 이야기</em></h2>
       <div class="player rv">
         <video id="rvPlayer" controls playsinline preload="none" poster="img/review01.jpg" src="video/review01.mp4"></video>
-        <p class="player-cap"><b id="rvTitle">후기 01</b><span>영상을 눌러 재생하세요</span></p>
+        <p class="player-cap"><b id="rvTitle">01 당뇨환자 사용후기</b><span>영상을 눌러 재생하세요</span></p>
       </div>
       <ul class="thumbs" id="thumbs"></ul>
       <p class="disclaimer">※ 고객 개인의 사용 경험이며, 효과는 개인차가 있을 수 있습니다. 본 제품은 의료기기가 아닙니다.</p>

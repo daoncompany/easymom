@@ -14,11 +14,18 @@
   $$('a', gnb).forEach(a => a.addEventListener('click', () => setMenu(false)));
 
   // 후기 영상 18편
-  const N = 18, pad = i => String(i).padStart(2, '0');
+  const titles = [
+    '당뇨환자 사용후기', '항암환자 사용후기', '얼굴비대칭환자 사용후기', '안구건조증환자 사용후기',
+    '합병증환자 사용후기', '고지혈증환자 사용후기', '회전근개파열환자 사용후기', '허리통증환자 사용후기',
+    '요실금환자 사용후기', '산후풍환자 사용후기', '전립선통증환자 사용후기', '전립선통증환자 사용후기',
+    '소화불량환자 사용후기', '피부처짐환자 사용후기', '수족냉증환자 사용후기', '합병증환자 사용후기',
+    '복부팽만환자 사용후기', '허리통증환자 사용후기'
+  ];
+  const N = titles.length, pad = i => String(i).padStart(2, '0');
   const player = $('#rvPlayer'), title = $('#rvTitle'), thumbs = $('#thumbs');
   thumbs.innerHTML = Array.from({ length: N }, (_, k) => {
     const n = pad(k + 1);
-    return `<li><button class="thumb" type="button" data-n="${n}"${k ? '' : ' aria-current="true"'}><img src="img/review${n}.jpg" alt="" loading="lazy" width="640" height="360"><span>후기 ${n}</span></button></li>`;
+    return `<li><button class="thumb" type="button" data-n="${n}"${k ? '' : ' aria-current="true"'}><img src="img/review${n}.jpg" alt="" loading="lazy" width="640" height="360"><span><small>${n}</small>${titles[k]}</span></button></li>`;
   }).join('');
   thumbs.addEventListener('click', e => {
     const b = e.target.closest('.thumb');
@@ -28,7 +35,7 @@
     b.setAttribute('aria-current', 'true');
     player.poster = `img/review${n}.jpg`;
     player.src = `video/review${n}.mp4`;
-    title.textContent = `후기 ${n}`;
+    title.textContent = `${n} ${titles[+n - 1]}`;
     player.play().catch(() => {});
     player.closest('.player').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
   });
@@ -85,7 +92,7 @@
     $$('.count', en.target).forEach(countUp);
     io.unobserve(en.target);
   }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  $$('.rv, .subhero, .panel').forEach(el => io.observe(el));
+  $$('.rv, .subhero, .hero, .panel').forEach(el => io.observe(el));
 
   // 글자 채움 문장: 글자 단위로 쪼갬
   const fill = $('#fillText');

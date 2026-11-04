@@ -69,11 +69,13 @@ em{font-style:normal;color:var(--honey-d)}
 
 /* 히어로: 영상만 크게, 스크롤하면 서브히어로가 덮으며 올라옴 */
 .hero-wrap{position:relative}
-.hero{position:sticky;top:0;height:100vh;height:100svh;min-height:560px;color:#fff;overflow:hidden;background:var(--espresso)}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 12s var(--ease) forwards}
-@keyframes heroZoom{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,21,16,.45) 0%,transparent 22%,transparent 70%,rgba(30,21,16,.6) 100%)}
-.subhero{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:radial-gradient(120% 80% at 50% 0%,var(--brown) 0%,var(--espresso) 62%);border-radius:40px 40px 0 0;box-shadow:0 -30px 60px rgba(0,0,0,.35)}
+.subhero{position:sticky;top:0;z-index:1;height:100vh;height:100svh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:radial-gradient(120% 80% at 50% 0%,var(--brown) 0%,var(--espresso) 62%);overflow:hidden}
+.hero{position:relative;z-index:2;height:100vh;height:100svh;min-height:560px;color:#fff;overflow:hidden;background:var(--espresso);border-radius:40px 40px 0 0;box-shadow:0 -30px 60px rgba(0,0,0,.35)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.8s var(--ease)}
+.hero.in .hero-bg{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(30,21,16,.7) 100%);pointer-events:none}
+.film-cap{position:absolute;left:0;right:0;bottom:48px;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.film-cap .eyebrow{margin:0;color:var(--honey-2)}
 .hero-in{position:relative;padding:120px var(--gut)}
 .subhero .eyebrow,.product .eyebrow,.contact .eyebrow{color:var(--honey-2)}
 .hero-tit{font-size:clamp(44px,8vw,104px);font-weight:800;line-height:1.12;letter-spacing:-.04em;margin-bottom:28px}
@@ -192,11 +194,12 @@ em{font-style:normal;color:var(--honey-d)}
 .thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .thumb{position:relative;width:100%;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:var(--ph);text-align:left}
 .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
-.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(30,21,16,.8));transition:background .3s}
-.thumb span{position:absolute;left:10px;bottom:8px;z-index:1;color:#fff;font-size:13px;font-weight:700}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(30,21,16,.9));transition:background .3s}
+.thumb span{position:absolute;left:10px;right:10px;bottom:8px;z-index:1;color:#fff;font-size:13px;font-weight:700;line-height:1.35}
+.thumb small{display:block;font-size:11px;font-weight:600;color:var(--honey-2);letter-spacing:.06em}
 .thumb[aria-current="true"]{outline:3px solid var(--honey);outline-offset:2px}
 .thumb[aria-current="true"]::after{background:rgba(30,21,16,.35)}
-.thumb[aria-current="true"] span::before{content:"▶ ";color:var(--honey-2)}
+.thumb[aria-current="true"] small::before{content:"▶ ";color:var(--honey-2)}
 .disclaimer{margin-top:24px;font-size:13px;color:var(--muted)}
 
 /* 상담 */
@@ -268,8 +271,12 @@ em{font-style:normal;color:var(--honey-d)}
   .prod-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;scrollbar-width:none}
   .prod-list::-webkit-scrollbar{display:none}
   .prod{flex:0 0 78%;scroll-snap-align:center}
-  .thumbs{grid-template-columns:repeat(3,1fr);gap:8px}
-  .thumb span{font-size:12px;left:8px;bottom:6px}
+  .thumbs{grid-template-columns:repeat(2,1fr);gap:10px}
+  .thumb span{font-size:13px;left:10px;right:8px;bottom:8px}
+  .thumb small{font-size:11px}
+  .film-cap{bottom:28px;flex-direction:column;align-items:flex-start;gap:10px}
+  .film-cap .btn{height:46px;padding:0 18px;font-size:14px}
+  .hero{border-radius:24px 24px 0 0}
   .player-cap span{display:none}
   .quick{right:14px;bottom:14px}
   .quick a{width:46px;height:46px}
