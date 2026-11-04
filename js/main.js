@@ -59,7 +59,10 @@
       x.tabIndex = on ? 0 : -1;
       const panel = $('#' + x.getAttribute('aria-controls'));
       panel.hidden = !on;
-      if (on) $$('.count', panel).forEach(countUp);
+      if (on) {
+        panel.classList.add('in');
+        $$('.count', panel).forEach(countUp);
+      }
     });
   };
   tabs.forEach((t, i) => {
