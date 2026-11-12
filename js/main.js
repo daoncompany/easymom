@@ -31,6 +31,34 @@
   $('.modal-x', modal).addEventListener('click', () => modal.close());
   modal.addEventListener('click', e => { if (e.target === modal || e.target === pages) modal.close(); });
 
+  // 메일 문의 폼 → Apps Script 웹앱(구글 시트 저장 + 메일 발송). 배포 주소만 채우면 됨
+  const FORM_URL = '';
+  const mailBtn = $('#mailBtn'), form = $('#mailForm'), msg = $('.mf-msg', form);
+  mailBtn.addEventListener('click', () => {
+    form.hidden = !form.hidden;
+    mailBtn.setAttribute('aria-expanded', !form.hidden);
+    if (!form.hidden) form.elements.name.focus();
+  });
+  const say = (t, bad) => { msg.textContent = t; msg.classList.toggle('err', !!bad); };
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const f = form.elements;
+    if (!f.name.value.trim() || !f.phone.value.trim() || !f.message.value.trim()) return say('이름, 연락처, 문의 내용을 입력해 주세요.', true);
+    if (f.email.value && !f.email.checkValidity()) return say('이메일 주소를 확인해 주세요.', true);
+    if (!f.agree.checked) return say('개인정보 수집에 동의해 주세요.', true);
+    if (!FORM_URL) return say('문의 접수 준비 중입니다. 전화나 카카오톡으로 문의해 주세요.', true);
+    const btn = $('button[type=submit]', form);
+    btn.disabled = true; say('보내는 중입니다…');
+    try {
+      const data = Object.fromEntries(['name', 'phone', 'email', 'message', 'website'].map(k => [k, f[k].value]));
+      const r = await (await fetch(FORM_URL, { method: 'POST', body: JSON.stringify(data) })).json();
+      if (!r.ok) throw r.error;
+      form.reset(); say('문의가 접수되었습니다. 확인 후 연락드리겠습니다.');
+    } catch (x) {
+      say((typeof x === 'string' && x) || '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.', true);
+    } finally { btn.disabled = false; }
+  });
+
   // 숫자 카운트업
   const countUp = el => {
     const to = +el.dataset.to, dec = +(el.dataset.dec || 0);

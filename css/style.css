@@ -214,6 +214,20 @@ em{font-style:normal;color:var(--honey-d)}
 .contact .eyebrow{color:var(--honey-2)}
 .contact .desc{color:rgba(255,255,255,.8);margin:0 auto 40px;font-weight:600}
 .contact .tit em{color:var(--honey-2)}
+.mail-form{max-width:640px;margin:32px auto 0;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:32px;display:grid;gap:16px}
+.mail-form label{display:grid;gap:8px;font-size:14px;font-weight:700;color:rgba(255,255,255,.85)}
+.mail-form label b{color:var(--honey-2)}
+.mail-form input,.mail-form textarea{font:inherit;font-size:16px;font-weight:500;color:var(--text);background:#fff;border:2px solid transparent;border-radius:12px;padding:13px 16px;width:100%}
+.mail-form input:focus,.mail-form textarea:focus{outline:0;border-color:var(--honey-2)}
+.mail-form textarea{resize:vertical;min-height:130px}
+.mf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mf-hp{position:absolute;left:-9999px;width:1px;height:1px}
+.mail-form .mf-agree{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:13px;line-height:1.6;color:rgba(255,255,255,.75)}
+.mf-agree input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--honey)}
+.mail-form .btn{justify-self:center;min-width:200px;border:0;cursor:pointer}
+.mail-form .btn:disabled{opacity:.6;cursor:wait}
+.mf-msg{text-align:center;font-size:14px;font-weight:600;min-height:1em;color:var(--honey-2)}
+.mf-msg.err{color:#ffb4a8}
 
 /* 푸터 */
 .ft{background:#150f0b;color:rgba(255,255,255,.62);font-size:14px;padding:56px 0 100px}
@@ -286,6 +300,8 @@ em{font-style:normal;color:var(--honey-d)}
   .prod h3{font-size:22px}
   .share-card{padding:28px}
   .contact .hero-btns .btn{flex:1 1 100%}
+  .mail-form{padding:22px 18px;margin-top:24px}
+  .mf-row{grid-template-columns:1fr}
   .hero{border-radius:24px 24px 0 0}
   .film-cap{bottom:28px}
   .quick{right:14px;bottom:14px}

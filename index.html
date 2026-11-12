@@ -17,9 +17,9 @@
 <meta name="naver-site-verification" content="9b5cd65bd20349fb2a81e6d14f7def7db0afe733">
 <link rel="icon" type="image/png" href="img/logo-1.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" integrity="sha384-/uC/GIvKJ/9RN6i1izHoBY9ubYo60OAsQRNQ3NRFiNsN+N/MVQJHD5OYcZz6wvwn" crossorigin="anonymous">
-<link rel="stylesheet" href="css/style.css?v=20261112k">
+<link rel="stylesheet" href="css/style.css?v=20261112l">
 <script>document.documentElement.classList.add('js')</script>
-<script src="js/main.js?v=20261112k" defer></script>
+<script src="js/main.js?v=20261112l" defer></script>
 </head>
 <body>
 
@@ -263,8 +263,20 @@
       <div class="hero-btns rv">
         <a class="btn btn-fill" href="https://pf.kakao.com/_SltKn/chat" target="_blank" rel="noopener noreferrer" data-ev="Contact">카카오톡 상담</a>
         <a class="btn btn-line" href="tel:01081794830" data-ev="Contact">010-8179-4830</a>
-        <a class="btn btn-line" href="mailto:happyland010@naver.com">메일 문의</a>
+        <button class="btn btn-line" type="button" id="mailBtn" aria-expanded="false" aria-controls="mailForm">메일 문의</button>
       </div>
+      <form class="mail-form" id="mailForm" hidden novalidate>
+        <div class="mf-row">
+          <label><span>이름 <b>*</b></span><input name="name" required maxlength="50" autocomplete="name"></label>
+          <label><span>연락처 <b>*</b></span><input name="phone" type="tel" required maxlength="30" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"></label>
+        </div>
+        <label>이메일<input name="email" type="email" maxlength="100" autocomplete="email" placeholder="답장 받을 메일 (선택)"></label>
+        <label><span>문의 내용 <b>*</b></span><textarea name="message" required maxlength="3000" rows="5" placeholder="궁금한 제품이나 내용을 적어 주세요."></textarea></label>
+        <input name="website" class="mf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="mf-agree"><input type="checkbox" name="agree" required> 문의 답변을 위한 개인정보(이름·연락처·이메일) 수집에 동의합니다. 수집한 정보는 답변 후 1년간 보관합니다.</label>
+        <button class="btn btn-fill" type="submit">문의 보내기</button>
+        <p class="mf-msg" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
   </div><!-- /hero-wrap: 첫 화면 배경이 고정된 채 아래 섹션들이 덮으며 올라감 -->
