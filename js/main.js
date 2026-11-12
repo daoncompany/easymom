@@ -51,7 +51,7 @@
     $$('.count', en.target).forEach(countUp);
     io.unobserve(en.target);
   }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  $$('.rv, .hero').forEach(el => io.observe(el));
+  $$('.rv, .subhero, .hero').forEach(el => io.observe(el));
 
   // 글자 채움 문장
   const fill = $('#fillText');
