@@ -43,8 +43,8 @@
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const f = form.elements;
-    if (!f.name.value.trim() || !f.phone.value.trim() || !f.message.value.trim()) return say('이름, 연락처, 문의 내용을 입력해 주세요.', true);
-    if (f.email.value && !f.email.checkValidity()) return say('이메일 주소를 확인해 주세요.', true);
+    if (!f.name.value.trim() || !f.phone.value.trim() || !f.email.value.trim() || !f.message.value.trim()) return say('이름, 연락처, 이메일, 문의 내용을 모두 입력해 주세요.', true);
+    if (!f.email.checkValidity()) return say('이메일 주소를 확인해 주세요.', true);
     if (!f.agree.checked) return say('개인정보 수집에 동의해 주세요.', true);
     if (!FORM_URL) return say('문의 접수 준비 중입니다. 전화나 카카오톡으로 문의해 주세요.', true);
     const btn = $('button[type=submit]', form);
