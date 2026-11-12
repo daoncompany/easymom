@@ -209,7 +209,6 @@ em{font-style:normal;color:var(--honey-d)}
 .ft{background:#150f0b;color:rgba(255,255,255,.62);font-size:14px;padding:56px 0 100px}
 .ft p{margin-bottom:12px}
 .ft-logo{width:56px;height:68px;margin-bottom:20px}
-.ft-daon{font-size:12px;opacity:.7}
 
 /* 플로팅 버튼 */
 .quick{position:fixed;right:24px;bottom:24px;z-index:40;display:flex;flex-direction:column;gap:10px}
