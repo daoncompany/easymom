@@ -12,7 +12,7 @@
   $$('[data-youtube]').forEach(a => { if (YOUTUBE) a.href = YOUTUBE; else a.removeAttribute('target'); });
 
   // 헤더: 스크롤 시 배경 + 모바일 메뉴
-  const hd = $('#hd'), gnb = $('#gnb'), menuBtn = $('#menuBtn');
+  const quick = $('.quick'), hd = $('#hd'), gnb = $('#gnb'), menuBtn = $('#menuBtn');
   const setMenu = open => {
     gnb.classList.toggle('open', open);
     hd.classList.toggle('menu-open', open);
@@ -76,6 +76,7 @@
   const onScroll = () => {
     const vh = innerHeight;
     hd.classList.toggle('on', scrollY > vh * 0.6);
+    quick.classList.toggle('on', scrollY > vh * 0.6);
     if (reduce) return;
     const r = fill.getBoundingClientRect();
     const p = Math.min(Math.max((vh * 0.85 - r.top) / (r.height + vh * 0.35), 0), 1);

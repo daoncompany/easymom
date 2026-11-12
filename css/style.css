@@ -217,7 +217,8 @@ em{font-style:normal;color:var(--honey-d)}
 .ft-logo{width:56px;height:68px;margin-bottom:20px}
 
 /* 플로팅 버튼 */
-.quick{position:fixed;right:24px;bottom:24px;z-index:40;display:flex;flex-direction:column;gap:10px}
+.quick{position:fixed;right:24px;bottom:24px;z-index:40;display:flex;flex-direction:column;gap:10px;transition:opacity .3s,visibility .3s}
+.quick:not(.on){opacity:0;visibility:hidden}/* 첫 화면 버튼과 겹치지 않게 스크롤 후 표시 */
 .quick a{width:52px;height:52px;border-radius:50%;background:var(--brown);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 8px 24px rgba(30,21,16,.25);transition:background .3s,color .3s}
 .quick a:first-child{background:#fee500;color:#191600}
 
@@ -274,9 +275,8 @@ em{font-style:normal;color:var(--honey-d)}
   .test-lead{font-size:16px}
   .test-grid{grid-template-columns:1fr}
   .test-card{padding:24px}
-  .prod-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;scrollbar-width:none}
-  .prod-list::-webkit-scrollbar{display:none}
-  .prod{flex:0 0 82%;scroll-snap-align:center}
+  .prod-list{grid-template-columns:1fr;gap:40px}
+
   .prod h3{font-size:22px}
   .share-card{padding:28px}
   .contact .hero-btns .btn{flex:1 1 100%}
@@ -294,4 +294,11 @@ em{font-style:normal;color:var(--honey-d)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
   .js .rv{opacity:1;transform:none;filter:none}
+}
+
+/* 세로 화면: 영상을 잘리지 않게 16:9 그대로 */
+@media (max-aspect-ratio:1/1){
+  .hero{height:auto;min-height:0;aspect-ratio:16/9}
+  .hero-bg{transform:none}
+  .film-cap{bottom:16px}
 }
