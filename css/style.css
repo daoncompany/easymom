@@ -222,6 +222,7 @@ em{font-style:normal;color:var(--honey-d)}
 .quick:not(.on){opacity:0;visibility:hidden}/* 첫 화면 버튼과 겹치지 않게 스크롤 후 표시 */
 .quick a{width:52px;height:52px;border-radius:50%;background:var(--brown);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 8px 24px rgba(30,21,16,.25);transition:background .3s,color .3s}
 .quick a:first-child{background:#fee500;color:#191600}
+.quick svg{width:30px;height:30px}
 
 /* 성적서 확대 */
 .modal{border:0;padding:3vh 0;background:transparent;width:100vw;max-width:none;height:100%;max-height:none;margin:0;overflow-y:auto;overscroll-behavior:contain}
