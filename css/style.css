@@ -266,8 +266,9 @@ em{font-style:normal;color:var(--honey-d)}
   .md b{font-size:19px}
   .md span{font-size:14px}
   .belt-btns .btn{flex:1 1 100%}
-  .howto{margin-top:64px;padding:16px 16px 28px;border-radius:20px}
-  .howto-txt{padding:0 6px}
+  .howto{margin-top:64px;padding:0 0 28px;border-radius:20px;overflow:hidden;gap:28px}
+  .howto video{border-radius:0}
+  .howto-txt{padding:0 22px}
   .howto h3{font-size:22px}
   .howto li{font-size:16px}
   .test-hero{padding:24px;border-radius:20px}
