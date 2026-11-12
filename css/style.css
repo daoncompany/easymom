@@ -47,7 +47,7 @@ em{font-style:normal;color:var(--honey-d)}
   .btn-line:hover{background:#fff;color:var(--espresso);border-color:#fff}
   .btn-dark:hover{background:var(--dana);transform:translateY(-2px)}
   .gnb a:hover{color:var(--honey)}
-  .quick a:hover{background:var(--honey);color:var(--espresso)}
+  .quick a:hover{filter:brightness(1.25)}
   .doc:hover img{transform:scale(1.04)}
 }
 
