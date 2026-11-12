@@ -130,8 +130,8 @@ em{font-style:normal;color:var(--honey-d)}
 
 /* 원단·시험자료 */
 .fabric{background:var(--sand)}
-.fab-head{display:grid;grid-template-columns:7fr 4fr;gap:56px;align-items:end;margin-bottom:56px}
-.fab-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.fab-head{display:grid;grid-template-columns:6fr 5fr;gap:56px;align-items:end;margin-bottom:56px}
+.fab-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r)}
 .tag{display:inline-block;font-size:13px;font-weight:700;color:var(--dana-d);background:rgba(152,76,21,.1);padding:6px 12px;border-radius:999px;margin-bottom:14px}
 .test-hero{display:grid;grid-template-columns:8fr 3fr;gap:40px;align-items:center;background:#fff;border-radius:28px;padding:44px;margin-bottom:20px}
 .test-hero h3{font-size:clamp(26px,3vw,36px);font-weight:800;line-height:1.3;letter-spacing:-.03em;margin-bottom:16px}
@@ -228,7 +228,7 @@ em{font-style:normal;color:var(--honey-d)}
 .modal::backdrop{background:rgba(15,10,7,.88)}
 .modal-pages{display:flex;flex-direction:column;align-items:center;gap:16px;padding:0 16px}
 .modal-pages img{width:auto;max-width:100%;max-height:94vh;border-radius:8px;background:#fff}/* 한 쪽이 화면 높이에 다 들어오게 */
-.modal-x{position:fixed;top:16px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:30px;line-height:1}
+.modal-x{position:fixed;top:16px;right:16px;z-index:2;width:52px;height:52px;border-radius:50%;background:var(--espresso);border:2px solid #fff;color:#fff;font-size:32px;line-height:1;box-shadow:0 4px 16px rgba(0,0,0,.5)}
 
 /* 스크롤 등장 (JS 켜졌을 때만 숨김) */
 .js .rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
