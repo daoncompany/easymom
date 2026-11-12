@@ -215,6 +215,7 @@ em{font-style:normal;color:var(--honey-d)}
 .contact .desc{color:rgba(255,255,255,.8);margin:0 auto 40px;font-weight:600}
 .contact .tit em{color:var(--honey-2)}
 .mail-form{max-width:640px;margin:32px auto 0;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:32px;display:grid;gap:16px}
+.mail-form[hidden]{display:none}
 .mail-form label{display:grid;gap:8px;font-size:14px;font-weight:700;color:rgba(255,255,255,.85)}
 .mail-form label b{color:var(--honey-2)}
 .mail-form input,.mail-form textarea{font:inherit;font-size:16px;font-weight:500;color:var(--text);background:#fff;border:2px solid transparent;border-radius:12px;padding:13px 16px;width:100%}
