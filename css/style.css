@@ -184,6 +184,12 @@ em{font-style:normal;color:var(--honey-d)}
 .care[open] summary::after{content:"−"}
 .care ul{padding:0 0 20px;display:flex;flex-direction:column;gap:8px;color:rgba(255,255,255,.8);font-size:15px}
 .care li::before{content:"· "}
+.care+.care{margin-top:12px}
+.care-body{padding-bottom:22px;color:rgba(255,255,255,.82);font-size:15px;line-height:1.7}
+.care-body h4{font-size:15px;color:var(--honey-2);margin:0 0 6px}
+.care-body p{margin-bottom:18px}
+.care-body ul{padding-bottom:16px}
+.care-body>:last-child{margin-bottom:0;padding-bottom:0}
 
 /* 사용 이야기 */
 .story{background:var(--cream);text-align:center}
