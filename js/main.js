@@ -32,7 +32,7 @@
   modal.addEventListener('click', e => { if (e.target === modal || e.target === pages) modal.close(); });
 
   // 메일 문의 폼 → Apps Script 웹앱(구글 시트 저장 + 메일 발송). 배포 주소만 채우면 됨
-  const FORM_URL = '';
+  const FORM_URL = 'https://script.google.com/macros/s/AKfycbx-6GF3REZ9HWU7YTYNErI1LnuSFOXbgRKk2pD6bwjy-FzPqdZ2JvhTFMj5YQvYVNa_/exec';
   const mailBtn = $('#mailBtn'), form = $('#mailForm'), msg = $('.mf-msg', form);
   mailBtn.addEventListener('click', () => {
     form.hidden = !form.hidden;
