@@ -22,14 +22,14 @@
   $$('a', gnb).forEach(a => a.addEventListener('click', () => setMenu(false)));
 
   // 성적서 확대
-  const modal = $('#docModal'), docImg = $('img', modal);
+  const modal = $('#docModal'), pages = $('.modal-pages', modal);
   $$('[data-doc]').forEach(b => b.addEventListener('click', () => {
-    docImg.src = b.dataset.doc;
+    pages.innerHTML = b.dataset.doc.split(',').map((src, i) => `<img src="${src}" alt="시험성적서 ${i + 1}쪽">`).join('');
     modal.showModal();
     modal.scrollTop = 0;
   }));
   $('.modal-x', modal).addEventListener('click', () => modal.close());
-  modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+  modal.addEventListener('click', e => { if (e.target === modal || e.target === pages) modal.close(); });
 
   // 숫자 카운트업
   const countUp = el => {
