@@ -8,7 +8,7 @@
   if (q.get('logo') === '2') $$('use[href^="img/logo-1.svg"]').forEach(u => u.setAttribute('href', 'img/logo-2.svg#l'));
 
   // 링크 받으면 여기만 채우면 됨
-  const YOUTUBE = '';
+  const YOUTUBE = 'https://www.youtube.com/@%EA%B1%B4%EA%B0%95%EC%86%8C%EB%A7%A4%EC%83%81/playlists';
   $$('[data-youtube]').forEach(a => { if (YOUTUBE) a.href = YOUTUBE; else a.removeAttribute('target'); });
 
   // 헤더: 스크롤 시 배경 + 모바일 메뉴
